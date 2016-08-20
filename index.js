@@ -1,8 +1,14 @@
-import Context from './src/Context'
-import Source from './src/Source'
-import Target from './src/Target'
+import Context from './src/Context.jsx'
+import Source from './src/Source.jsx'
+import Target from './src/Target.jsx'
 
-export default {
+// const components = {
+//   Context,
+//   Source,
+//   Target
+// }
+
+export {
   Context,
   Source,
   Target

@@ -4,6 +4,8 @@
   "description": "Wrapper components for react-dnd",
   "main": "index.js",
   "scripts": {
+    "storybook": "start-storybook -p 9001",
+    "sb": "npm run storybook",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -22,5 +24,8 @@
     "react": "^15.3.0",
     "react-dnd": "^2.1.4",
     "react-dnd-html5-backend": "^2.1.2"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.3.0"
   }
 }
