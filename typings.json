@@ -1,0 +1,7 @@
+{
+  "globalDependencies": {
+    "react": "registry:dt/react#0.14.0+20160817201227",
+    "react-dnd": "registry:dt/react-dnd#2.0.2+20160816153011",
+    "react-dnd-html5-backend": "registry:dt/react-dnd-html5-backend#2.1.2+20160704104003"
+  }
+}

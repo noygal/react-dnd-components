@@ -1,0 +1,26 @@
+{
+  "name": "react-dnd-components",
+  "version": "0.0.1",
+  "description": "Wrapper components for react-dnd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "dnd",
+    "react-dnd",
+    "drag",
+    "drop",
+    "d&d",
+    "wrapper",
+    "component"
+  ],
+  "author": "Gal Noy",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.3.0",
+    "react-dnd": "^2.1.4",
+    "react-dnd-html5-backend": "^2.1.2"
+  }
+}
