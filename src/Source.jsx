@@ -1,16 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { DragSource } from 'react-dnd'
 
 export default class Source extends Component {
   constructor (props) {
     super(props)
-    this.Container = DragSource(props.type, props.specs, collect)(Wrapper)
+    const { type, specs = {}} = props
+    this.Container = DragSource(type, specs, collect)(Wrapper)
   }
   render () {
-    const { children, style, className } = this.props
+    const { children, dndId, style, className } = this.props
     const Container = this.Container
-    return <Container className={className} style={style}>{children}</Container>
+    return <Container dndId={dndId} className={className} style={style}>{children}</Container>
   }
+}
+
+Source.propTypes = {
+  dndId: PropTypes.any.isRequired
 }
 
 class Wrapper extends Component {

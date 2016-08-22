@@ -9,13 +9,15 @@ export const Basic = props => {
     <Context style={styles.context}>
       <div>Context</div>
       {targets.map((target, i) => (
-        <Target key={i} style={styles.target} types={['card']} specs={{}}>
-          <div>Target {i}</div>
-          {sources.map((source, j) => source.targetId !== i ? undefined : (
-            <Source key={j} style={styles.source} type={'card'} specs={{beginDrag: () => ({id: j})}}>
-              S:{j}
+        <Target key={target.id} dndId={target.id} style={styles.target} types={target.types} specs={target.specs}>
+          <div>Target {target.id}</div>
+          {sources.filter(source => source.targetId === target.id)
+            .map(source => (
+            <Source key={source.id} dndId={source.id} style={styles.source} type={source.type} specs={source.specs}>
+              S:{source.id}
             </Source>
-          ))}
+            ))
+          }
         </Target>
       ))}
     </Context>
