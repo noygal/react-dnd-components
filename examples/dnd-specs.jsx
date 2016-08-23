@@ -1,28 +1,33 @@
 import React, { Component } from 'react'
 import { Context, Target, Source } from '../'
+import Freezer from 'freezer-js'
+
+let Store = new Freezer({sources: [{id: '1'}, {id: '2'}]})
 
 export default class DndSepcsExample extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      sources: [{id: '1'}, {id: '2'}]
-    }
+    // Source specs
     this.sourceSpecs = {
       beginDrag: props => ({id: props.dndId}),
-      endDrag: (props, monitor) => this.setState(
-        {
-          sources: this.state.sources.map(source => source.id !== monitor.getItem().id ? source
-              : !monitor.getDropResult() ? source : Object.assign({}, source, {targetId: monitor.getDropResult().id}))
-        })
+      endDrag: (props, monitor) => {
+        const target = monitor.getDropResult()
+        if (!target) return
+        const source = Store.get().sources.find(source => source.id === monitor.getItem().id)
+        source.set({targetId: target.id})
+      }
     }
+    // Target specs
     this.targetSpecs = {
       drop: props => ({id: props.dndId})
     }
   }
+  componentDidMount(){
+      Store.on('update', () => this.setState({}));
+  }
 
   _renderSources(targetId = null) {
-    console.log(this.state.sources)
-    return this.state.sources
+    return Store.get().sources
       .filter(source => targetId === null ? !source.targetId : source.targetId === targetId)
       .map(source => <Source key={source.id} dndId={source.id} style={styles.source} type={'card'} specs={this.sourceSpecs}>S:{source.id}</Source>)
   }
@@ -39,10 +44,7 @@ export default class DndSepcsExample extends Component {
           Target 2
           {this._renderSources(2)}
         </Target>          
-        <div style={styles.target}>
-          Not Target
-          {this._renderSources()}
-        </div>
+        {this._renderSources()}
       </Context>
     )
   }

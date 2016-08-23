@@ -26,6 +26,7 @@
     "react-dnd-html5-backend": "^2.1.2"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.3.0"
+    "@kadira/storybook": "^2.3.0",
+    "freezer-js": "^0.11.1"
   }
 }
