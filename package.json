@@ -25,6 +25,10 @@
     "react-dnd": "^2.1.4",
     "react-dnd-html5-backend": "^2.1.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noygal/react-dnd-components.git"
+  },
   "devDependencies": {
     "@kadira/storybook": "^2.3.0",
     "freezer-js": "^0.11.1"
