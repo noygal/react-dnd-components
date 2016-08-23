@@ -18,7 +18,7 @@ all other react-dnd components should reside inside a `Context` components.
 - `className` - propagate the className to the wrapper.
 
 #### Usage
-```
+```jsx
 import { Context } from 'react-dnd-components'
 
 ...
@@ -37,11 +37,11 @@ it should reside inside a `Context` component.
 
 - `style` - propagate the style to the wrapper.
 - `className` - propagate the className to the wrapper.
-- `types` - Required. The types supportedd components, it will only react to those.
+- `types` - Required. The types supported components, it will only react to those.
 - `specs` - Required. plain object implementing the react-dnd drop target [specification](http://gaearon.github.io/react-dnd/docs-drop-target.html).
 
 #### Usage
-```
+```jsx
 import { Target } from 'react-dnd-components'
 
 ...
@@ -75,7 +75,7 @@ it should reside inside a `Context` component.
 - `specs` - Required. plain object implementing the react-dnd drop source spec [specification](http://gaearon.github.io/react-dnd/docs-drag-source.html).
 
 #### Usage
-```
+```jsx
 import { Source } from 'react-dnd-components'
 
 ...
